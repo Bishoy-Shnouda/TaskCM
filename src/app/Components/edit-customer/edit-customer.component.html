@@ -1,0 +1,102 @@
+<br />
+<div class="container mt-5"  style="width: 50vw;">
+  <form
+    class="col-lg-6 col-md-6 col-sm-12 m-auto"
+    #frm="ngForm"
+    (ngSubmit)="editCustomer(editCst.id)"
+  >
+    <br />
+    <div class="form-group">
+        <label for="Fname" class="form-label">First Name</label>
+        <input
+          type="text"
+          style="border-left: 5px solid blue"
+          required
+          [(ngModel)]="editCst.cust_FName"
+          name="fName"
+          id="Fname"
+          class="form-control"
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">Help text</small>
+      </div>
+      <br />
+    
+    <div class="form-group">
+        <label for="Lname" class="form-label">Last Name</label>
+        <input
+          type="text"
+          style="border-left: 5px solid blue"
+          required
+          [(ngModel)]="editCst.cust_LName"
+          name="lName"
+          id="Lname"
+          class="form-control"
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">Help text</small>
+      </div>
+      <div class="form-group">
+        <p>Gender</p>
+        <label for="sexM" class="form-label"></label>
+        <input
+          type="radio"
+          style="border-left: 5px solid blue"
+          required
+          [(ngModel)]="editCst.cust_Gender"
+          name="gender"
+          id="sexM"
+          value="M"
+          class="me-2"
+          aria-describedby="helpId"
+        />Male
+        <br>
+        <label for="sexF" class="form-label"></label>
+        <input
+          type="radio"
+          style="border-left: 5px solid blue"
+          required
+          [(ngModel)]="editCst.cust_Gender"
+          name="gender"
+          id="sexF"
+          value="F"
+          aria-describedby="helpId"
+          class="me-2"
+        />Female
+        <br>
+        <small id="helpId" class="text-muted">Help text</small>
+      </div>
+      <div class="form-group">
+        <label for="date" class="form-label">Date Of Birth</label>
+        <input
+          type="date"
+          name="d"
+          style="border-left: 5px solid blue"
+          id="date"
+          [(ngModel)]="editCst.cust_DOB"
+          class="form-control"
+          placeholder=""
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">Help text</small>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="e"
+          style="border-left: 5px solid blue"
+          id="email"
+          [(ngModel)]="editCst.cust_Email"
+          class="form-control"
+          placeholder=""
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">Help text</small>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>
+<hr />
