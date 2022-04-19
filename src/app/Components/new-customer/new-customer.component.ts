@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/Services/customer.service';
 import { Icustomer } from 'src/app/ViewModels/icustomer';
 
@@ -10,7 +11,7 @@ import { Icustomer } from 'src/app/ViewModels/icustomer';
 export class NewCustomerComponent implements OnInit {
   newCst!: Icustomer;
 
-  constructor(private service: CustomerService) {
+  constructor(private service: CustomerService ,private router: Router) {
     this.newCst = {
       id: 0,
       cust_FName: '',
@@ -26,6 +27,7 @@ export class NewCustomerComponent implements OnInit {
     this.service.newCustomer(this.newCst).subscribe((res) => {
       res.data = this.newCst;
       alert("success");
+      this.router.navigateByUrl('/customer');
     });
   }
 }
